@@ -8,7 +8,7 @@ body{
 .navbar{
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     border-bottom: solid black 1px;
     gap: 10px;
     position:sticky;
@@ -44,6 +44,10 @@ body{
     display: flex;
     gap: 10px;
     align-items: center;
+}
+.navbar__s4{
+    
+    display: none;
 }
 .categories{
     border-bottom: solid black 1px;
@@ -81,7 +85,9 @@ body{
     flex-wrap: wrap;
 }
 .course-card{
-    width:250px;
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 5px;
 }
 .course-card img{
     width: 100%;
@@ -94,13 +100,13 @@ body{
     gap: 10px;
     margin-top: 10px;
     flex-wrap: wrap;
-    
 
 }
 .topics__container p{
     border: solid grey 2px;
     padding: 10px;
     flex-basis: 30%;
+    
     
 }
 .popular{
@@ -131,34 +137,32 @@ body{
     align-items: center;
     margin: 20px;
 }
+.pot{
+    position: relative;
+}
 .box{
     background-color: white;
     width: 415px;
-    height: 175px;
+    height: 125px;
     position: absolute;
-    bottom: 275px;
+    bottom: 80px;
    left: 30px;
-
-
+   animation-name:zoom;
+   animation-duration: 2s;
+   opacity: 0;
+   animation-fill-mode: forwards;
 }
 .sale-image__offer{
     position: absolute;
-    bottom: 300px;
+    bottom: 80px;
    left: 30px;
    padding: 5px;
    animation-name:zoom;
    animation-duration: 2s;
    opacity: 0;
    animation-fill-mode: forwards;
-   
+}
 
-}
-.box{
-    animation-name:zoom;
-    animation-duration: 2s;
-    opacity: 0;
-    animation-fill-mode: forwards;
-}
 @keyframes zoom {
     0%{
         opacity: 0;
@@ -189,4 +193,30 @@ body{
 }
 .mylearning:hover .mylearning__popup{
     display: block;
+}
+@media screen and (max-width:800px){
+    body{
+        font-size: 10px;
+    }
+    
+}
+@media screen and (max-width:600px) {
+    .course-card{
+        flex-basis: 40%;
+    }
+    .categories{
+        display: none;
+    }
+    .navbar__s2,.navbar__s3{
+        display: none;
+    }
+    .navbar__s4{
+        display: block;
+    }
+    .box{
+        width: 50%;
+    }
+    .topics__container p{
+        flex-basis: 27%;
+    }
 }
